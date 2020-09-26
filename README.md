@@ -47,3 +47,15 @@ eg setCount, setName, setLassun
     },[])
     in this second argument, we pass array of those variables, useEffect is dependent upon. suppose we want the inner block to execute only when count is changed , we pass count into dependency array of useEffect
 
+ ### 3. Custom Hook
+ - What are these ? bascially export a new module ..
+- use the name scheme as use<whatever your purpose>
+eg useDocumentTitle
+- Name that file use<purpose>.js
+- in it, export default function(any args){
+    useEffect(()=>{
+        do something with args
+    })
+}
+
+and import in your jsx 
