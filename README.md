@@ -17,7 +17,7 @@ Feel free to fork and star the repo !
  - Hence react team improved functional components
  - sfc will avoid repeated references to this keyword. Simply pass props as an argument to your function. We will use a special method call useState() from react library. This is called hooks
  - useState() is called react Hook. It is used to hook into react state.
- ### Explaination of Hook (useState)
+ ### 1. Explaination of Hook (useState)
  - useState allows us to work with state
  - import {useState} from 'react'
  - useState() will return an array containing two items.
@@ -28,3 +28,22 @@ Feel free to fork and star the repo !
 - Good Practice : When naming a setter function for state variable, use this name 'set<VarName>'
 eg setCount, setName, setLassun
 - Avoid using setState as a name because its very generic
+
+ ### 2. Explaination of Hook (useEffect)
+ - In class components we have 
+ 1. componentDidMount()
+ 2. componentDidUpdate()
+ 3. componentWillUnmount()
+
+ these are good but managing so many fx becomes cumbersome when we have complex operations. 
+
+ The solution to this is using useEffect hook
+
+ - useEffect(func)
+    - the function passed in useEffect gets called everytime our component renders
+    - useEffect also takes a second argument called dependencies.. usually an array
+    eg. useEffect(()=>{
+        something happens here
+    },[])
+    in this second argument, we pass array of those variables, useEffect is dependent upon. suppose we want the inner block to execute only when count is changed , we pass count into dependency array of useEffect
+
